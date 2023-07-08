@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <title>Login</title>
     <!-- Agrega aquí tus enlaces a archivos CSS -->
+    <!---->
 </head>
 <body>
     <h2>Login</h2>
