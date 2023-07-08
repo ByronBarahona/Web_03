@@ -14,7 +14,7 @@ $vendedor_nombre = $_SESSION["vendedor_nombre"];
 <html>
 <head>
   <title>Vendedor - Tienda M&M</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="../../css/vendedor.css">
 </head>
 <body>
   <header>
