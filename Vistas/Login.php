@@ -8,7 +8,7 @@ session_start();
 
 <head>
   <title>Login - Tienda M&M</title>
-  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ session_start();
         <li><a href="Index.php">Inicio</a></li>
         <li><a href="productos.php">Productos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="./Vistas/Login.php">Login</a></li>
+        <li><a href="./Login.php">Login</a></li>
 
       </ul>
       
