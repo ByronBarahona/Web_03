@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";  // Cambia esto si tu servidor de base de datos está en otro lugar
-$username = "tu_usuario";  // Reemplaza con tu nombre de usuario de la base de datos
-$password = "tu_contraseña";  // Reemplaza con tu contraseña de la base de datos
+$username = "root";  // Reemplaza con tu nombre de usuario de la base de datos
+$password = "root";  // Reemplaza con tu contraseña de la base de datos
 $dbname = "tiendamm";  // Reemplaza con el nombre de tu base de datos
 
 // Crear conexión
