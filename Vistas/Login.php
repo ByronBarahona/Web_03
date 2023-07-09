@@ -2,13 +2,14 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+  $username = $_POST["usr_log"];
+  $password = $_POST["usr_pass"];
+  $tip_usr = $_POST["perfil"];
 
   // Aquí debes realizar la validación de las credenciales
   // Comparar con los datos almacenados en la base de datos
 
-  if ($username == "admin" && $password == "admin123") {
+  if ($username == "usr_log" && $password == "usr_pass" && $tip_usr == "perfil") {
     $_SESSION["user_type"] = "admin";
     header("Location: admin.php");
     exit;
