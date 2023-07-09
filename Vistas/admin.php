@@ -15,7 +15,7 @@ if ($_SESSION["user_type"] !== "admin") {
 <html>
 <head>
   <title>Admin - Tienda M&M</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <body>
   <header>

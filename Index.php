@@ -15,7 +15,7 @@
       <ul>
         <li><a href="Index.php">Inicio</a></li>
         <li><a href="productos.php">Productos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="./Vistas/Contacto.php">Contacto</a></li>
         <li><a href="./Vistas/Login.php">Login</a></li>
       </ul>
     </nav>
@@ -30,12 +30,12 @@
       <h2>Productos Destacados</h2>
       <div class="productos-destacados">
         <div class="producto">
-          <img src="gomitas.jpg" alt="Gomitas">
+          <img src="./Imagenes/Gomitas.jpg" alt="Gomitas">
           <h3>Gomitas</h3>
           <p>Deliciosas gomitas de diferentes sabores y formas.</p>
         </div>
         <div class="producto">
-          <img src="chocolates.jpg" alt="Chocolates">
+          <img src="./Imagenes/Chocolates.jpg" alt="Chocolates">
           <h3>Chocolates</h3>
           <p>Irresistibles chocolates hechos con ingredientes de alta calidad.</p>
         </div>
