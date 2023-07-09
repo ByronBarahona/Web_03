@@ -7,7 +7,7 @@ Class Conexion{
     private $db;
     private $conexion;
 
-    chupalo;
+
 
     public function __construct(){//$host, $user, $pass, $db
         require_once "DB_CFG.php";//obtenemos nuestras constantes
