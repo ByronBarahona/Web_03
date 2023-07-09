@@ -23,10 +23,16 @@ Class Autenticar{
 
         if ($resultado->num_rows == 1) {
            
-            $_SESSION["ffff"] = $this->rut;
-            header('Location: Panel.php');
-        } else {
-            header('Location: index.php');
+            $_SESSION[1] = $this->perfil;
+            header('Location: admin.php');
+        } elseif($resultado -> num_rows == 1) {
+
+            $_SESSION[2] = $this->perfil;
+
+            header('Location: vendedor.php');
+        }
+        else{
+            header('location: Login.php');
         }
 
     }
