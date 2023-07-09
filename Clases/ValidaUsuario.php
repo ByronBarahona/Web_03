@@ -14,23 +14,24 @@ Class Autenticar{
     }
 
     public function Validar(){
-        $conexion = new Conexion();
-        $conexion->Conecta();
+        $Conexion2 = new Conexion();
+        $Conexion2->Conecta();
         
         $consulta = "SELECT * FROM usuario WHERE usr_log = '$this->user' AND usr_pass = '$this->clave' AND perfil = '$this->perfil'";
         
-        $resultado = $conexion->Ejecuta($consulta);
+        $resultado = $Conexion2->Ejecuta($consulta);
 
         if ($resultado->num_rows == 1) {
            
             $_SESSION[1] = $this->perfil;
             header('Location: admin.php');
+            
         } elseif($resultado->num_rows == 1) {
 
             $_SESSION[2] = $this->perfil;
-
             header('Location: vendedor.php');
         }
+        
         else{
             header('location: Login.php');
         }
