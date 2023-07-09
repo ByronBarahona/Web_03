@@ -23,7 +23,7 @@ Class Autenticar{
 
         if ($resultado->num_rows == 1) {
            
-            $_SESSION["rut"] = $this->rut;
+            $_SESSION["dd"] = $this->rut;
             header('Location: Panel.php');
         } else {
             header('Location: index.php');
