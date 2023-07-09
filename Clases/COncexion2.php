@@ -6,9 +6,7 @@ Class Conexion{
     private $pass;
     private $db;
     private $conexion;
-
-    chupalo;
-
+    
     public function __construct(){//$host, $user, $pass, $db
         require_once "DB_CFG.php";//obtenemos nuestras constantes
         $this->host = host;        
@@ -16,6 +14,8 @@ Class Conexion{
         $this->pass = pass;        
         $this->db = db;        
     }
+
+
 
     public function Conecta(){
         //Conexion DB

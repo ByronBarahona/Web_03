@@ -17,14 +17,16 @@ Class Autenticar{
         $conexion = new Conexion();
         $conexion->Conecta();
         
-        $consulta = "SELECT * FROM usuario WHERE usr_log = '$this->user' AND usr_pass = '$this->clave' AND perfil = '$this->perfil'";
+        $consulta = "SELECT * FROM usuario WHERE usr_log = '$this->user' AND usr_pass = '$this->clave'";
         
         $resultado = $conexion->Ejecuta($consulta);
+        
 
-        if ($resultado->num_rows == 1) {
+        if ($resultado -> num_rows == 1) {
            
             $_SESSION[1] = $this->perfil;
             header('Location: admin.php');
+            
         } elseif($resultado->num_rows == 1) {
 
             $_SESSION[2] = $this->perfil;
