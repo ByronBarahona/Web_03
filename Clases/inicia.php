@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Aquí puedes realizar las operaciones necesarias con los datos recibidos
 
         // Ejemplo de uso en la clase Autenticar
-        $autenticador = new Autenticar($user, $clave);
+        // $autenticador = new Autenticar($user, $clave);
         $autenticador->Validar();
     } else {
         // Los datos no están presentes en la solicitud POST
