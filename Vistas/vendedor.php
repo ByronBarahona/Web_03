@@ -2,10 +2,10 @@
 session_start();
 
 // Verificar si el usuario ha iniciado sesión como vendedor
-if ($_SESSION["user_type"] !== "vendedor") {
+/*if ($_SESSION["user_type"] !== "vendedor") {
   header("Location: login.php");
   exit;
-}
+}*/
 
 $vendedor_nombre = $_SESSION["vendedor_nombre"];
 ?>
