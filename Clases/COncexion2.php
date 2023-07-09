@@ -6,13 +6,7 @@ Class Conexion{
     private $pass;
     private $db;
     private $conexion;
-<<<<<<< HEAD
     
-=======
-
-
-
->>>>>>> e46956a62f9ed784ad3e7ae9d97426a71ded6762
     public function __construct(){//$host, $user, $pass, $db
         require_once "DB_CFG.php";//obtenemos nuestras constantes
         $this->host = host;        
