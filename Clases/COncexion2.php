@@ -6,7 +6,11 @@ Class Conexion{
     private $pass;
     private $db;
     private $conexion;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 204c26d10f3e9f7b08505c5984e243341e4655a9
     public function __construct(){//$host, $user, $pass, $db
         require_once "DB_CFG.php";//obtenemos nuestras constantes
         $this->host = host;        
@@ -19,8 +23,10 @@ Class Conexion{
 
     public function Conecta(){
         //Conexion DB
+        
         //POO
         $this->conexion = new mysqli($this->host,$this->user,$this->pass,$this->db);
+
         //POO
         if($this->conexion->connect_errno){
             die("Conexion Error: (". $this->conexion->connect_errno. ") " . $this->conexion->connect_error);

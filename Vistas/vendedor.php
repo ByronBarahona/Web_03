@@ -20,7 +20,7 @@ $vendedor_nombre = $_SESSION["vendedor_nombre"];
   <header>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Index.php">Inicio</a></li>
         <li><a href="productos.php">Productos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="login.php">Login</a></li>
