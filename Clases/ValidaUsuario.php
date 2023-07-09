@@ -25,7 +25,7 @@ Class Autenticar{
            
             $_SESSION[1] = $this->perfil;
             header('Location: admin.php');
-        } elseif($resultado -> num_rows == 1) {
+        } elseif($resultado->num_rows == 1) {
 
             $_SESSION[2] = $this->perfil;
 
