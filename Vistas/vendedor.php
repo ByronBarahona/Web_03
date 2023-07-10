@@ -2,6 +2,7 @@
 session_start();
 
 // Verificar si el usuario ha iniciado sesión como vendedor
+/*
 if ($_SESSION["user_type"] !== "vendedor") {
   header("Location: login.php");
   exit;
@@ -15,7 +16,7 @@ $vendedor_nombre = $_SESSION["vendedor_nombre"];
 
 <head>
   <title>Vendedor - Tienda M&M</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="../css/vendedor.css">
 </head>
 
 <body>
@@ -33,17 +34,31 @@ $vendedor_nombre = $_SESSION["vendedor_nombre"];
 
   <main>
     <h1>Bienvenido, <?php echo $vendedor_nombre; ?></h1>
-    <p>Información para vendedores.</p>
+    <p>El siguiente modulo sirve para </p>
 
-    <h3>Consultar productos</h3>
-    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-    <input type="text" placeholder="Buscar..." name="cuadrobusqueda">
-    <button type="submit"><i class="fa fa-search"></i></button>
-</form>
+    <div>
+      <h3>Consultar productos</h3>
+      <form class="example" style="margin:auto;max-width:300px">
+        <input type="text" placeholder="Buscar..." name="cuadrobusqueda">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+          </tr>
+          <!-- Contenido de la tabla -->
+        </table>
+      </div>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2023 Tienda M&M. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>
