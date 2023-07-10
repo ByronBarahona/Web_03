@@ -1,7 +1,72 @@
 <?php
 session_start();
-include("Clases/crud_admin.php");
+//include("Clases/crud_admin.php");
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "TiendaMM";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+  die("Error de conexión: " . $conn->connect_error);
+}
+// Operaciones CRUD
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if ($_POST["action"] == "Agregar") {
+    // Procesar formulario de agregar producto
+    $id_prod = $_POST["id_producto"];
+    $descripcion = $_POST["descripcion"];
+    $usuario = $_POST["usuario"];
+    $fecha_ing = $_POST["fec_creacion"];
+    $valor = $_POST["valor"];
+    // Resto de atributos...
+
+    // Ejecutar consulta SQL para insertar el producto en la tabla correspondiente
+    $sql = "INSERT INTO Producto (id_producto,descripcion, usuario, fec_creacion,valor) VALUES ('$id_prod', '$descripcion', '$usuario','$fecha_ing', '$valor')";
+    // Agregar los demás atributos a la consulta...
+
+    if ($conn->query($sql) === TRUE) {
+      echo "Producto agregado exitosamente";
+    } else {
+      echo "Error al agregar el producto: " . $conn->error;
+    }
+  } elseif ($_POST["action"] == "Editar") {
+    // Procesar formulario de editar producto
+    $id = $_POST["id"];
+    $nombre = $_POST["nombre"];
+    $descripcion = $_POST["descripcion"];
+    // Resto de atributos...
+
+    // Ejecutar consulta SQL para actualizar el producto en la tabla correspondiente
+    $sql = "UPDATE Producto SET nombre='$nombre', descripcion='$descripcion' WHERE id=$id";
+    // Actualizar los demás atributos en la consulta...
+
+    if ($conn->query($sql) === TRUE) {
+      echo "Producto actualizado exitosamente";
+    } else {
+      echo "Error al actualizar el producto: " . $conn->error;
+    }
+  } elseif ($_POST["action"] == "Eliminar") {
+    // Procesar formulario de eliminar producto
+    $id = $_POST["id"];
+
+    // Ejecutar consulta SQL para eliminar el producto de la tabla correspondiente
+    $sql = "DELETE FROM Producto WHERE id=$id";
+
+    if ($conn->query($sql) === TRUE) {
+      echo "Producto eliminado exitosamente";
+    } else {
+      echo "Error al eliminar el producto: " . $conn->error;
+    }
+  }
+}
+
+// Consulta de productos existentes
+$sql = "SELECT * FROM Producto";
+$result = $conn->query($sql);
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -40,20 +105,28 @@ include("Clases/crud_admin.php");
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
       <input type="hidden" name="action" value="Agregar">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
+      <label for="cod_Prod">Codigo Producto:</label>
+</br>
+      <input type="number" id="cod_Prod" name="cod_Prod" required>
+      </br>
 
       <label for="descripcion">Descripción:</label>
+
       <input type="text" id="descripcion" name="descripcion" required>
 
-      <label for="Fecha_Ingreso">Fecha Ingreso:</label>
+      <label for="usuario">Usuario</label>
+      </br>
+      <input type="number" id="usuario" name="usuario" required>
+      </br>
+
+      <label for="fec_creacion">Fecha Ingreso:</label>
 </br>
-      <input type="date"id="Fecha_Ingreso" name="Fecha_ingreso" required> 
+      <input type="date"id="fec_creacion" name="fec_creacion" required> 
 
 </br>
-      <label for="Valor">Valor:</label>
+      <label for="valor">Valor:</label>
 </br>
-      <input type="number" id="Valor" nmae="Valor"required>
+      <input type="number" id="valor" nmae="valor"required>
 </br></br>
 
       <input type="submit" value="Agregar">
