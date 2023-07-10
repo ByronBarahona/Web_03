@@ -17,7 +17,9 @@ session_start();
 <head>
   <title>Admin - Tienda M&M</title>
   <link rel="stylesheet" type="text/css" href="../css/admin.css">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <header>
@@ -44,6 +46,7 @@ session_start();
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
       <div class="accordion-body">
       <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+
       <input type="hidden" name="action" value="Agregar">
       <label for="nombre">Nombre:</label>
       <input type="text" id="nombre" name="nombre" required>
@@ -51,7 +54,15 @@ session_start();
       <label for="descripcion">Descripción:</label>
       <input type="text" id="descripcion" name="descripcion" required>
 
-      <!-- Resto de atributos... -->
+      <label for="Fecha_Ingreso">Fecha Ingreso:</label>
+</br>
+      <input type="date"id="Fecha_Ingreso" name="Fecha_ingreso" required> 
+
+</br>
+      <label for="Valor">Valor:</label>
+</br>
+      <input type="number" id="Valor" nmae="Valor"required>
+</br></br>
 
       <input type="submit" value="Agregar">
     </form>
@@ -102,22 +113,10 @@ session_start();
       </div>
     </div>
   </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
   </main>
   <footer>
     <p>&copy; 2023 Tienda M&M. Todos los derechos reservados.</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
