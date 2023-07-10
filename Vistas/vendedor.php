@@ -5,7 +5,7 @@ session_start();
 if ($_SESSION["user_type"] !== "vendedor") {
   header("Location: login.php");
   exit;
-}*/
+}
 
 $vendedor_nombre = $_SESSION["vendedor_nombre"];
 ?>
