@@ -1,5 +1,5 @@
 <?php
-require ("Clases/Conexion.php");
+require ("./Conexion.php");
 session_start();
 Class Autenticar{
     private $user;
@@ -14,26 +14,32 @@ Class Autenticar{
     }
 
     public function Validar(){
-        $Conexion2 = new Conexion();
-        $Conexion2->Conecta();
+
+        $Conexion = new Conexion();
+        $Conexion->Conecta();
         
-        $consulta = "SELECT * FROM usuario WHERE usr_log = '$this->user' AND usr_pass = '$this->clave' AND perfil = '$this->perfil'";
-        
-        $resultado = $Conexion2->Ejecuta($consulta);
+        // $prf = "SELECT perfil FROM usuarios where usr_log = "admin" and usr_pass = "adm123"";
+        $consulta = "SELECT * FROM usuarios WHERE usr_log = '$this->user' AND usr_pass = '$this->clave'";
+
+        $resultado = $Conexion->Ejecuta($consulta);
 
         if ($resultado->num_rows == 1) {
            
-            $_SESSION[1] = $this->perfil;
-            header('Location: admin.php');
+            $_SESSION["perfil"] = $this->perfil;
+            header('Location: ../Vistas/admin.php');
+            die();
             
         } elseif($resultado->num_rows == 1) {
 
-            $_SESSION[2] = $this->perfil;
-            header('Location: vendedor.php');
+            $_SESSION["perfil"] = $this->perfil;
+            header('Location: ../Vistas/vendedor.php');
+            die();
         }
         
         else{
+
             header('location: Login.php');
+            die();
         }
 
     }

@@ -8,7 +8,7 @@ session_start();
 
 <head>
   <title>Login - Tienda M&M</title>
-  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@ session_start();
 
     <?php } ?>
 
-    <form method="POST" action="inicia.php">
+    <form method="POST" action="../Clases/inicia.php">
 
       <label for="username">Usuario:</label>
       <input type="text" id="username" name="username" required><br>

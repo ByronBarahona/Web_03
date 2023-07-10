@@ -1,11 +1,12 @@
 <?php
 session_start();
 
-// Verificar si el usuario ha iniciado sesión como admin
-if ($_SESSION["user_type"] !== "admin") {
-  header("Location: login.php");
-  exit;
-}
+// var_dump($_SESSION);
+// // Verificar si el usuario ha iniciado sesión como admin
+// if ($_SESSION["user_type"] !== "admin") {
+//   header("Location: login.php");
+//   exit;
+// }
 
 // Conexión a la base de datos
 
