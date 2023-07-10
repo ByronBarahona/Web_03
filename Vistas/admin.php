@@ -2,10 +2,7 @@
 session_start();
 
 // Verificar si el usuario ha iniciado sesión como admin
-if ($_SESSION["user_type"] !== "admin") {
-  header("Location: login.php");
-  exit;
-}
+
 
 // Conexión a la base de datos
 
@@ -53,9 +50,15 @@ if ($_SESSION["user_type"] !== "admin") {
       <label for="descripcion">Descripción:</label>
       <input type="text" id="descripcion" name="descripcion" required>
 
-      
+      <label for="Fecha_Ingreso">Fecha Ingreso:</label>
+</br>
+      <input type="date"id="Fecha_Ingreso" name="Fecha_ingreso" required> 
 
-      <!-- Resto de atributos... -->
+</br>
+      <label for="Valor">Valor:</label>
+</br>
+      <input type="number" id="Valor" nmae="Valor"required>
+</br></br>
 
       <input type="submit" value="Agregar">
     </form>
